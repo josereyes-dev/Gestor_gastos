@@ -1,0 +1,56 @@
+body{
+    font-family: sans-serif;
+    background-color: #f3f3f1;
+
+    main{
+        max-width: 680px;
+        margin: 2rem auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid;
+        border-color: #ddd;
+
+        #form_gasto{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.2fr 1.2fr;
+            gap: 5px;
+            padding: 5px;
+
+            #agregar_gasto{
+                padding: 5px;
+                grid-column: 1 / -1;
+            }
+        }
+    }
+
+    #total{
+        font-size: 20px;
+    }
+    #lista_gastos{
+        padding: 10px;
+        list-style: none;
+        
+        .gasto{
+            
+            display: flex;
+
+            .info{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+            .info_monto{
+                display: flex;
+                align-items: center;
+
+                .categoria{
+                    background-color: #CAEAC7;
+                    color: #006300;
+                    padding: 2px;
+                    border-radius:2px;
+                }
+            }
+        }
+    }
+}

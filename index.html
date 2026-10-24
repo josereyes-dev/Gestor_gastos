@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestor de Gastos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <main>
         <h1>Gestor de Gastos</h1>
         <form id="form_gasto">
             <input type="text" id="descripcion" placeholder="Descripción" required>
-            <input type="text" id="monto" placeholder="monto" required>
+            <input type="number" id="monto" placeholder="Monto" required min="0" step="0.01">
             <select name="categoria" id="categoria" required>
-                <option value="">Categoriá</option>
+                <option value="">Categoría</option>
                 <option value="Alimentación">Alimentación</option>
                 <option value="Transporte">Transporte</option>
                 <option value="Servicios">Servicios</option>
@@ -21,13 +23,36 @@
                 <option value="Otros">Otros</option>
             </select>
             <input type="date" id="fecha" required>
-            <button type="submit">Agregar gasto</button>
+            <button type="submit" id="agregar_gasto">Agregar gasto</button>
         </form>
 
-        <p>Total: <strong id="Total">0$</strong></p>
+        <p>Total: <strong id="total">$ 0</strong></p>
 
-        <ul id="lista_gastos"></ul>
+        <ul id="lista_gastos">
+            <li>
+                <div class="gasto">
+                    <div class="info">
+                        <strong class="descripcion">Mercado Semanal</strong>
+                        <small class="fecha">21 Oct 2026</small>
+                    </div>
+                    <div class="info_monto">
+                        <span class="categoria">Alimentación</span>
+                        <span class="monto">$120.000</span>
+                        <div>
+                            <button>Editar</button>
+                            <button>Eliminar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </li>
+
+        </ul>
+
+
     </main>
     <script src="js/app.js"></script>
 </body>
+
 </html>
