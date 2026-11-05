@@ -4,14 +4,7 @@ const descripcion = document.querySelector("#descripcion");
 const monto = document.querySelector("#monto");
 const categoria = document.querySelector("#categoria");
 const fecha = document.querySelector("#fecha");
-
-
-// console.log(total.textContent);
-//total.textContent = "$500.000";
-
-// total.addEventListener("click",()=>{
-//     console.log("Hicimos clic")
-// });
+const lista_gastos = document.querySelector("#lista_gastos");
 
 const gastos = [];
 
@@ -26,29 +19,21 @@ miformulario.addEventListener("submit", (event) => {
     };
     gastos.push(gasto);
 
+    miformulario.reset();
+
+    const nuevoItem = document.createElement ("li");
+    nuevoItem.textContent = gasto.descripcion;
+    lista_gastos.appendChild(nuevoItem);
+    
     let sumaGastos = 0;
 
-    for (const gasto of gastos) {
-        sumaGastos = sumaGastos + gasto.monto;
+    for (const item of gastos) {
+        sumaGastos = sumaGastos + item.monto;
     }
 
-    // console.log(sumaGastos);
-
-    total.textContent = "$"+ sumaGastos.toLocaleString("es-CO");
+    total.textContent = "$ "+ sumaGastos.toLocaleString("es-CO");
 
     console.log(gastos);
     console.log(gastos.length);
 
 });
-
-
-
-// const gasto = {
-//     descripcion: descripcion,
-//     monto: monto,
-//     categoria: categoria,
-//     fecha: fecha
-// };
-
-// console.log(gasto);
-// console.log(gasto.monto);
